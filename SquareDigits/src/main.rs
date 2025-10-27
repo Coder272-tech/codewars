@@ -1,5 +1,5 @@
-fn main() {
-	let num : u64 = 9119;
+fn square_digits(num: u64) -> u64 {
+	//let num : u64 = 9119;
 	let mut str : String = "".to_string(); 
 	
 	let digits: Vec<u64> = num
@@ -11,5 +11,11 @@ fn main() {
 	for i in 0..digits.len() {
 		str.push_str( &(digits[i]*digits[i]).to_string()  );
 	}
-	println!("result: {}", str);
+	return str.parse::<u64>().unwrap();
+}
+
+
+fn main() {
+
+	println!("result: {}", square_digits(9119));
 }
